@@ -1,0 +1,21 @@
+---
+
+- name: awscli package
+  apt:
+    name: awscli
+    state: present
+  become: true
+
+- name: aws config
+  template:
+    src: templates/config
+    dest: /home/pi/.aws/config
+    owner: pi
+    group: pi
+
+- name: aws_credentials
+  template:
+    src: templates/credentials
+    dest: /home/pi/.aws/credentials
+    owner: pi
+    group: pi
