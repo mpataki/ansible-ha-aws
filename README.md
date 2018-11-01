@@ -34,6 +34,13 @@ You first need to sign up for an AWS account and create some credentials.
 ```yml
     - hosts: pi
       vars:
+        aws_credentials:
+          - name: default
+            aws_access_key_id: <your-access-key-id>
+            aws_secret_access_key: <your-secret-access-key>
+          - name: s3-access
+            aws_access_key_id: <your-access-key-id-2>
+            aws_secret_access_key: <your-secret-access-key-2>
       roles:
          - role: mpataki.ha-aws
 ```
