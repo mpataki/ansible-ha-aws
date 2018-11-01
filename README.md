@@ -1,6 +1,6 @@
 # ansible-ha-aws
 
-This ansible roles installs the aws-cli as well as your aws config and credentials so other systems can use it.
+This ansible roles installs the aws-cli as well as your aws config and credentials so other systems can use them.
 
 ## Requirements
 
