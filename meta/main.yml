@@ -1,4 +1,5 @@
 galaxy_info:
+  role_name: ha-aws
   author: Mat Pataki
   description: 'AWS cli and credential installation'
   company: 'n/a'
