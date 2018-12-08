@@ -6,16 +6,26 @@
     state: present
   become: true
 
+- name: ensure the <home>/.aws directory exists
+  file:
+    path: "/home/{{ aws_linux_user | default('pi') }}/.aws"
+    state: directory
+    owner: "{{ aws_linux_user | default('pi') }}"
+    group: "{{ aws_linux_group | default('pi') }}"
+  become: true
+
 - name: aws config
   template:
     src: templates/config
-    dest: /home/pi/.aws/config
-    owner: pi
-    group: pi
+    dest: "/home/{{ aws_linux_user | default('pi') }}/.aws/config"
+    owner: "{{ aws_linux_user | default('pi') }}"
+    group: "{{ aws_linux_group | default('pi') }}"
+  become: true
 
 - name: aws_credentials
   template:
     src: templates/credentials
-    dest: /home/pi/.aws/credentials
-    owner: pi
-    group: pi
+    dest: "/home/{{ aws_linux_user | default('pi') }}/.aws/credentials"
+    owner: "{{ aws_linux_user | default('pi') }}"
+    group: "{{ aws_linux_group | default('pi') }}"
+  become: true
