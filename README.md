@@ -1,5 +1,7 @@
 # ansible-ha-aws
 
+[![Build Status](https://travis-ci.org/mpataki/ansible-ha-aws.svg?branch=master)](https://travis-ci.org/mpataki/ansible-ha-aws)
+
 This ansible roles installs the aws-cli as well as your aws config and credentials so other systems can use them.
 
 Note that you want to give multiple linux users their own credentials, you can include this role multiple times with different variables to achieve this.
